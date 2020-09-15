@@ -1,5 +1,20 @@
 import React from 'react';
-const TodoList = ()=><h1>Im a to do lists</h1>
+import NewTodoForm from './NewTodoForm';
+import Todo from './Todo';
+
+class TodoList extends React.Component{
+  state = {
+    todos:[]
+  }
+  render(){
+    return (
+      <div className="TodoList">
+        <NewTodoForm/>
+        <Todo/>
+      </div>
+    )
+  }
+}
 
 
 export default TodoList;
