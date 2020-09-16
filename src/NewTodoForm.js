@@ -8,12 +8,21 @@ class NewTodoForm extends React.Component{
   handleChange = (event)=>{
     this.setState({todo: event.target.value});
   }
+
+  handleSubmit = (event) =>{
+    event.preventDefault();
+    const {todo} = this.state;
+    console.log("todo added: ", todo);
+    this.setState({todo:""});
+  }
+
   render(){
     return(
       <div className="NewTodoForm">
-        <form>
+        <form onSubmit={this.handleSubmit}>
+          <button type="submit">Add</button>
           <label>New todo: </label>
-          <input name="todo" value={this.state.todo} type="text" onChange={this.handleChange}/>
+          <input name="todo" value={this.state.todo} type="text" onChange={this.handleChange}placeholder="New Todo"/>
         </form>
       </div>
     )
