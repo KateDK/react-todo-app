@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Todo = () => (
+const Todo = (props) => (
   <div className="Todo">
-    Im a todoooo
+    <h3>{props.todo}</h3>
   </div>
 );
 

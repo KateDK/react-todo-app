@@ -7,10 +7,11 @@ class TodoList extends React.Component{
     todos:[]
   }
   render(){
+    const {todos} = this.state;
     return (
       <div className="TodoList">
         <NewTodoForm/>
-        <Todo/>
+        {todos.map(todo=><Todo todo={todo}/>)}
       </div>
     )
   }
