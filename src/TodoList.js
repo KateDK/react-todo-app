@@ -7,11 +7,16 @@ class TodoList extends React.Component {
   state = {
     todos: [],
   };
+
+  addTodo = (newTodo) => {
+    this.setState({ todos: [...this.state.todos, newTodo] });
+  };
+
   render() {
     const { todos } = this.state;
     return (
       <div className="TodoList">
-        <NewTodoForm />
+        <NewTodoForm addTodo={this.addTodo} />
         {todos.map((todo) => (
           <Todo todo={todo} key={uuidv4()} />
         ))}
