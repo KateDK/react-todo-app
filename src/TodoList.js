@@ -21,7 +21,12 @@ class TodoList extends React.Component {
     const { todos } = this.state;
     return (
       <div className="TodoList">
-        <NewTodoForm addTodo={this.addTodo} />
+        <NewTodoForm
+          addTodo={this.addTodo}
+          todoText=""
+          buttonText="Add"
+          label="New todo: "
+        />
         {todos.map((item) => (
           <Todo
             todo={item.todo}

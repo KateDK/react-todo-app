@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 class NewTodoForm extends React.Component {
   state = {
-    todo: '',
+    todo: this.props.todoText,
   };
 
   handleChange = (event) => {
@@ -21,8 +21,8 @@ class NewTodoForm extends React.Component {
     return (
       <div className="NewTodoForm">
         <form onSubmit={this.handleSubmit}>
-          <button type="submit">Add</button>
-          <label>New todo: </label>
+          <button type="submit">{this.props.buttonText}</button>
+          <label>{this.props.label}</label>
           <input
             name="todo"
             value={this.state.todo}
