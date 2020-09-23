@@ -18,15 +18,14 @@ class TodoList extends React.Component {
   };
 
   updateTodo = (todo) => {
-    console.log('todo from update method: ', todo);
     const { id } = todo;
     const { todos } = this.state;
     let index;
     for (let i = 0; i < todos.length; i++) {
-      if (todos[i][id] === id) index = i;
+      if (todos[i].id === id) index = i;
     }
-    todos[index] = { ...todo.todo };
-    this.setState({ todos: todos });
+    todos[index] = { ...todo };
+    this.setState({ todos });
   };
 
   render() {
