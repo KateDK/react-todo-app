@@ -3,18 +3,18 @@ import { v4 as uuidv4 } from 'uuid';
 
 class NewTodoForm extends React.Component {
   state = {
-    todo: '',
+    todoText: '',
   };
 
   handleChange = (event) => {
-    this.setState({ todo: event.target.value });
+    this.setState({ todoText: event.target.value });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { todo } = this.state;
-    this.props.addTodo({ todo, id: uuidv4() });
-    this.setState({ todo: '' });
+    const { todoText } = this.state;
+    this.props.addTodo({ todoText, id: uuidv4() });
+    this.setState({ todoText: '' });
   };
 
   render() {
@@ -25,7 +25,7 @@ class NewTodoForm extends React.Component {
           <label>New Todo: </label>
           <input
             name="todo"
-            value={this.state.todo}
+            value={this.state.todoText}
             type="text"
             onChange={this.handleChange}
             placeholder="New Todo"
