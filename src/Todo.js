@@ -12,6 +12,7 @@ class Todo extends React.Component {
 
   render() {
     const { deleteTodo, todo, updateTodo } = this.props;
+    //console.log('todo in TODO: ', todo);
     const { editMode } = this.state;
     return (
       <div className="Todo">
@@ -23,7 +24,6 @@ class Todo extends React.Component {
             toggleEdit={this.handleClcick}
           />
         ) : (
-          // <h1>edit todo form</h1>
           <span>
             <h2>{todo.todoText}</h2>
             <button onClick={() => deleteTodo(todo.id)}>X</button>
