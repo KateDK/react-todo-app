@@ -1,26 +1,25 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 class EditTodoForm extends React.Component {
   state = {
-    todo: {...this.props.todo},
+    curentTodo: {...this.props.todo},
   };
 
   handleChange = (event) => {
-    const {id} = this.state.todo;
-    this.setState({ todo:{todoText:event.target.value,id}});
+    const {id} = this.state.curentTodo;
+    this.setState({ curentTodo:{todoText:event.target.value,id}});
   };
 
   handleSubmit = (event) => {
     const {toggleEdit} = this.props;
     event.preventDefault();
-    const { todo } = this.state;
-    this.props.updateTodo({ todo });
+    const { curentTodo } = this.state;
+    this.props.updateTodo({ ...curentTodo });
     toggleEdit();
   };
 
   render() {
-    const {todoText} = this.state.todo;
+    const {todoText} = this.state.curentTodo;
     return (
       <div className="NewTodoForm">
         <form onSubmit={this.handleSubmit}>
