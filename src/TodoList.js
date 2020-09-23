@@ -17,6 +17,18 @@ class TodoList extends React.Component {
     this.setState({ todos: filteredTodos });
   };
 
+  updateTodo = (todo) => {
+    console.log('todo from update method: ', todo);
+    const { id } = todo;
+    const { todos } = this.state;
+    let index;
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i][id] === id) index = i;
+    }
+    todos[index] = { ...todo.todo };
+    this.setState({ todos: todos });
+  };
+
   render() {
     const { todos } = this.state;
     return (
@@ -24,6 +36,7 @@ class TodoList extends React.Component {
         <NewTodoForm addTodo={this.addTodo} />
         {todos.map((item) => (
           <Todo
+            updateTodo={this.updateTodo}
             todo={item}
             key={item.id}
             id={item.id}
