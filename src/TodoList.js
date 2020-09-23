@@ -24,7 +24,7 @@ class TodoList extends React.Component {
         <NewTodoForm addTodo={this.addTodo} />
         {todos.map((item) => (
           <Todo
-            todo={item.todo}
+            todo={item}
             key={item.id}
             id={item.id}
             deleteTodo={this.deleteTodo}
