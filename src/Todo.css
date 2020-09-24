@@ -1,14 +1,29 @@
+h2 {
+  display: inline;
+}
 .Todo {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-button {
-  height: 25px;
-  margin-left: 10px;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
+  padding: 10px;
+  /* max-height: 35px; */
+  /* flex-wrap: wrap; */
+  /* text-align: center; */
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+.todoDelete,
+.todoEdit {
+  background-color: aquamarine;
+  border-radius: 5px;
+  color: rgb(10, 91, 72);
+  height: 35px;
+  min-width: 35px;
+  font-weight: bold;
+  border: 1px solid aquamarine;
+  margin-right: 10px;
 }
