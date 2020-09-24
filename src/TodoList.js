@@ -1,6 +1,7 @@
 import React from 'react';
 import NewTodoForm from './NewTodoForm';
 import Todo from './Todo';
+import './TodoList.css';
 
 class TodoList extends React.Component {
   state = {
