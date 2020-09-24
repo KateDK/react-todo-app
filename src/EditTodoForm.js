@@ -24,7 +24,7 @@ class EditTodoForm extends React.Component {
       <div className="NewTodoForm">
         <form onSubmit={this.handleSubmit}>
           <button type="submit">Save</button>
-          <label>Edit Todo </label>
+          <label hidden>Edit Todo </label>
           <input
             name="todo"
             value={todoText}

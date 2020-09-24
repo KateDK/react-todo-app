@@ -22,7 +22,7 @@ class NewTodoForm extends React.Component {
       <div className="NewTodoForm">
         <form onSubmit={this.handleSubmit}>
           <button type="submit">Add</button>
-          <label>New Todo: </label>
+          <label hidden>New Todo: </label>
           <input
             name="todo"
             value={this.state.todoText}
