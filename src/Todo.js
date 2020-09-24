@@ -30,11 +30,15 @@ class Todo extends React.Component {
           />
         ) : (
           <span>
+            <button className="todoDelete" onClick={() => deleteTodo(todo.id)}>
+              X
+            </button>
+            <button className="todoEdit" onClick={this.handleClcick}>
+              Edit
+            </button>
             <h2 className={todoTextClass} onClick={this.hendleToggle}>
               {todo.todoText}
             </h2>
-            <button onClick={() => deleteTodo(todo.id)}>X</button>
-            <button onClick={this.handleClcick}>Edit</button>
           </span>
         )}
       </div>
