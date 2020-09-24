@@ -10,9 +10,14 @@ class Todo extends React.Component {
     this.setState({ editMode: !this.state.editMode });
   };
 
+  hendleToggle = () => {
+    const { toggleCompleteTodo, todo } = this.props;
+    toggleCompleteTodo(todo);
+  };
+
   render() {
     const { deleteTodo, todo, updateTodo } = this.props;
-    //console.log('todo in TODO: ', todo);
+    const todoTextClass = todo.completed ? 'todoText completed' : 'todoText';
     const { editMode } = this.state;
     return (
       <div className="Todo">
@@ -25,7 +30,9 @@ class Todo extends React.Component {
           />
         ) : (
           <span>
-            <h2>{todo.todoText}</h2>
+            <h2 className={todoTextClass} onClick={this.hendleToggle}>
+              {todo.todoText}
+            </h2>
             <button onClick={() => deleteTodo(todo.id)}>X</button>
             <button onClick={this.handleClcick}>Edit</button>
           </span>
