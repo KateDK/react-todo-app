@@ -28,6 +28,18 @@ class TodoList extends React.Component {
     this.setState({ todos });
   };
 
+  toggleCompleteTodo = (todo) => {
+    const { id, completed } = todo;
+    const { todos } = this.state;
+
+    let index;
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].id === id) index = i;
+    }
+    todos[index] = { ...todo, completed: !completed };
+    this.setState({ todos });
+  };
+
   render() {
     const { todos } = this.state;
     return (
@@ -40,6 +52,7 @@ class TodoList extends React.Component {
             key={item.id}
             id={item.id}
             deleteTodo={this.deleteTodo}
+            toggleCompleteTodo={this.toggleCompleteTodo}
           />
         ))}
       </div>
