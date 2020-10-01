@@ -20,12 +20,16 @@ class TodoList extends React.Component {
   updateTodo = (todo) => {
     const { id } = todo;
     const { todos } = this.state;
-    let index;
-    for (let i = 0; i < todos.length; i++) {
-      if (todos[i].id === id) index = i;
-    }
-    todos[index] = { ...todo };
-    this.setState({ todos });
+
+    const updatedTodos = todos.map(todoItem=>{
+      if(todoItem.id === id){
+        return {...todo}
+      }else{
+        return todoItem
+      }
+    })
+
+    this.setState({ todos: updatedTodos });
   };
 
   toggleCompleteTodo = (todo) => {
