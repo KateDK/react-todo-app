@@ -21,7 +21,7 @@ class EditTodoForm extends React.Component {
   render() {
     const {todoText} = this.state.curentTodo;
     return (
-      <div className="NewTodoForm">
+      <div className="EditTodoForm">
         <form onSubmit={this.handleSubmit}>
           <button type="submit">Save</button>
           <label hidden>Edit Todo </label>
