@@ -49,7 +49,6 @@ class TodoList extends React.Component {
     return (
       <div className="TodoList">
         <h1>Todo List <span>Get stuff done</span></h1>
-        <NewTodoForm addTodo={this.addTodo} />
         <ul>
         {todos.map((item) => (
           <li key={item.id}>
@@ -63,6 +62,7 @@ class TodoList extends React.Component {
           </li>
         ))}
         </ul>
+        <NewTodoForm addTodo={this.addTodo} />
       </div>
     );
   }
