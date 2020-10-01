@@ -48,8 +48,8 @@ class TodoList extends React.Component {
     const { todos } = this.state;
     return (
       <div className="TodoList">
+        <h1>Todo List <span>Get stuff done</span></h1>
         <NewTodoForm addTodo={this.addTodo} />
-        {todos.length > 0 && <h1>Todo List</h1>}
         <ul>
         {todos.map((item) => (
           <li key={item.id}>
