@@ -49,7 +49,7 @@ class TodoList extends React.Component {
     return (
       <div className="TodoList">
         <NewTodoForm addTodo={this.addTodo} />
-        <h1>Todo List:</h1>
+        {todos.length > 0 && <h1>Todo List</h1>}
         <ul>
         {todos.map((item) => (
           <li key={item.id}>
