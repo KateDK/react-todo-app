@@ -1,7 +1,8 @@
 .TodoList {
-  background-color: antiquewhite;
+  background: #ff6666;
+  color: #fff;
+  box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
   width: 20%;
-  border: 5px solid aquamarine;
   border-radius: 15px;
   min-height: 250px;
   padding: 3em;
