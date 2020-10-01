@@ -14,8 +14,7 @@ class TodoList extends React.Component {
 
   deleteTodo = (todoId) => {
     const { todos } = this.state;
-    const filteredTodos = todos.filter((elm) => elm.id !== todoId);
-    this.setState({ todos: filteredTodos });
+    this.setState({ todos: todos.filter((elm) => elm.id !== todoId) });
   };
 
   updateTodo = (todo) => {
