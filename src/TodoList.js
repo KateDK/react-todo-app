@@ -46,16 +46,20 @@ class TodoList extends React.Component {
     return (
       <div className="TodoList">
         <NewTodoForm addTodo={this.addTodo} />
+        <h1>Todo List:</h1>
+        <ul>
         {todos.map((item) => (
-          <Todo
-            updateTodo={this.updateTodo}
-            todo={item}
-            key={item.id}
-            id={item.id}
-            deleteTodo={this.deleteTodo}
-            toggleCompleteTodo={this.toggleCompleteTodo}
-          />
+          <li key={item.id}>
+            <Todo
+              updateTodo={this.updateTodo}
+              todo={item}
+              id={item.id}
+              deleteTodo={this.deleteTodo}
+              toggleCompleteTodo={this.toggleCompleteTodo}
+            />
+          </li>
         ))}
+        </ul>
       </div>
     );
   }
