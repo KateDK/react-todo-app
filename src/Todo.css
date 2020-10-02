@@ -37,12 +37,15 @@ h2 {
 
 .todoDelete,
 .todoEdit {
-  background-color: aquamarine;
-  border-radius: 5px;
-  color: rgb(10, 91, 72);
-  height: 35px;
-  min-width: 35px;
-  font-weight: bold;
-  border: 1px solid aquamarine;
-  margin-right: 10px;
+  flex-shrink: 0;
+  padding-left: 0.7em;
+  margin-left: auto;
+
+  border: none;
+  font-size: 1em;
+  margin: 0.4em;
+  background: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: #fff;
 }
