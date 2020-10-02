@@ -29,7 +29,10 @@ h2 {
 }
 
 .completed {
+  transition: opacity 300ms ease-in-out;
+  transition-delay: 200ms;
   text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .todoDelete,
