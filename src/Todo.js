@@ -17,7 +17,7 @@ class Todo extends React.Component {
 
   render() {
     const { deleteTodo, todo, updateTodo } = this.props;
-    const todoTextClass = todo.completed ? 'todoText completed' : 'todoText';
+    const todoTextClass = todo.completed ? 'Todo-task completed ' : 'Todo-task';
     const { editMode } = this.state;
     return (
       <div className="Todo">
