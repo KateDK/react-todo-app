@@ -7,7 +7,7 @@ h2 {
 .Todo {
   display: flex;
   margin: 0 -3rem 4px;
-  padding: 1.1rem 3rem;
+  padding: 1.1rem 2rem;
   min-height: 77px;
   justify-content: space-between;
   align-items: center;
@@ -28,6 +28,12 @@ h2 {
   /* text-align: center; */
 }
 
+.Todo-task {
+  position: relative;
+  transition: opacity 0.4s linear;
+  margin-left: 25px;
+  text-align: left;
+}
 .completed {
   transition: opacity 300ms ease-in-out;
   transition-delay: 200ms;
