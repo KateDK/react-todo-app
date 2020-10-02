@@ -21,6 +21,7 @@ class NewTodoForm extends React.Component {
     return (
       <div className="NewTodoForm">
         <form onSubmit={this.handleSubmit}>
+          <button type="submit">Add</button>
           <label hidden>New Todo: </label>
           <input
             name="todo"
@@ -29,7 +30,6 @@ class NewTodoForm extends React.Component {
             onChange={this.handleChange}
             placeholder="New Todo"
           />
-          <button type="submit">Add</button>
         </form>
       </div>
     );
