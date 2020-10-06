@@ -54,6 +54,8 @@ class TodoList extends React.Component {
     }
     todos[index] = { ...todo, completed: !completed };
     this.setState({ todos });
+    localStorage.setItem('todos',JSON.stringify(todos));
+
   };
 
   render() {
