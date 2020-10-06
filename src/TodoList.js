@@ -8,8 +8,15 @@ class TodoList extends React.Component {
     todos: [],
   };
 
+  componentDidMount(){
+    const data = JSON.parse(localStorage.getItem('todos'));
+    this.setState({todos: data ? data : []});
+  }
+
   addTodo = (newTodo) => {
-    this.setState({ todos: [...this.state.todos, newTodo] });
+    const newTodos = [...this.state.todos, newTodo];
+    this.setState({ todos: newTodos });
+    localStorage.setItem('todos',JSON.stringify(newTodos));
   };
 
   deleteTodo = (todoId) => {
