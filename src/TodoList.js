@@ -76,6 +76,9 @@ class TodoList extends React.Component {
           </li>
         ))}
         </ul>
+        <div className="clearAllContainer">
+          <button className="clearAll">Clear all</button>
+        </div>
         <NewTodoForm addTodo={this.addTodo} />
       </div>
     );

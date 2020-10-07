@@ -35,3 +35,20 @@ ul {
   margin-left: 3px;
   margin-top: 0.2rem;
 }
+
+.clearAllContainer {
+  display: flex;
+  align-content: flex-start;
+  margin: 0.4em;
+}
+
+.clearAll {
+  font: inherit;
+  border: none;
+  /* border-bottom: 2px solid #fff; */
+  color: #fff;
+  text-decoration: underline;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
