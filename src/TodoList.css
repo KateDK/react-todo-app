@@ -47,4 +47,10 @@ ul {
   padding: 0;
   cursor: pointer;
   margin-left: -52.9px;
+  font-size: small;
+  height: 18px;
+}
+
+.clearAll:hover {
+  font-size: medium;
 }
