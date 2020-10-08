@@ -43,7 +43,6 @@ ul {
 .clearAll {
   font: inherit;
   border: none;
-  /* border-bottom: 2px solid #fff; */
   color: #fff;
   text-decoration: underline;
   background: none;
