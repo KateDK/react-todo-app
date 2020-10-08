@@ -10,7 +10,7 @@ class Todo extends React.Component {
     this.setState({ editMode: !this.state.editMode });
   };
 
-  hendleToggle = () => {
+  handleToggle = () => {
     const { toggleCompleteTodo, todo } = this.props;
     toggleCompleteTodo(todo);
   };
@@ -38,7 +38,7 @@ class Todo extends React.Component {
             <button className="todoEdit" aria-label="Edit Todo" onClick={this.handleClick}>
             <i class="fas fa-pencil-alt"></i>
             </button>
-            <h2 className={todoTextClass} onClick={this.hendleToggle}>
+            <h2 className={todoTextClass} onClick={this.handleToggle}>
               {todo.todoText}
             </h2>
           </span>
