@@ -21,6 +21,8 @@
   transition: opacity 0.4s linear;
   margin-left: 25px;
   text-align: left;
+  font-size: large;
+  align-self: center;
 }
 
 .completed {
