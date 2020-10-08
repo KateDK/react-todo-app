@@ -6,7 +6,7 @@ class Todo extends React.Component {
   state = {
     editMode: false,
   };
-  handleClcick = () => {
+  handleClick = () => {
     this.setState({ editMode: !this.state.editMode });
   };
 
@@ -27,7 +27,7 @@ class Todo extends React.Component {
               todo={todo}
               label="Edit Todo "
               updateTodo={updateTodo}
-              toggleEdit={this.handleClcick}
+              toggleEdit={this.handleClick}
             />
           </span>
         ) : (
@@ -35,7 +35,7 @@ class Todo extends React.Component {
             <button className="todoDelete" aria-label="Delete Todo" onClick={() => deleteTodo(todo.id)}>
             <i class="far fa-trash-alt"></i>
             </button>
-            <button className="todoEdit" aria-label="Edit Todo" onClick={this.handleClcick}>
+            <button className="todoEdit" aria-label="Edit Todo" onClick={this.handleClick}>
             <i class="fas fa-pencil-alt"></i>
             </button>
             <h2 className={todoTextClass} onClick={this.hendleToggle}>
