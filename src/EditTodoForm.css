@@ -13,6 +13,7 @@
   background: #f7f1f1;
   padding: 0 1.5em;
   font-size: initial;
+  padding-bottom: 2px;
 }
 .EditTodoForm button {
   padding: 0 1.3rem;
