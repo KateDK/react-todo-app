@@ -16,4 +16,6 @@ body {
   font-family: 'Quicksand', sans-serif;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 100%;
+  overflow: auto;
 }
