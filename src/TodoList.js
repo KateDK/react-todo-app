@@ -81,9 +81,11 @@ class TodoList extends React.Component {
           </li>
         ))}
         </ul>
+        {todos.length > 1 &&
         <div className="clearAllContainer">
           <button className="clearAll" onClick={this.clearAll}>Clear all</button>
         </div>
+        }
         <NewTodoForm addTodo={this.addTodo} />
       </div>
     );
