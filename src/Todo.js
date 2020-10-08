@@ -32,7 +32,7 @@ class Todo extends React.Component {
           </span>
         ) : (
           <span>
-            <button className="todoDelete" onClick={() => deleteTodo(todo.id)}>
+            <button className="todoDelete" aria-label="Delete Todo" onClick={() => deleteTodo(todo.id)}>
             <i class="far fa-trash-alt"></i>
             </button>
             <button className="todoEdit" onClick={this.handleClcick}>
