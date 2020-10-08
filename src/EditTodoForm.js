@@ -3,24 +3,24 @@ import './EditTodoForm.css'
 
 class EditTodoForm extends React.Component {
   state = {
-    curentTodo: {...this.props.todo},
+    currentTodo: {...this.props.todo},
   };
 
   handleChange = (event) => {
-    const {id} = this.state.curentTodo;
-    this.setState({ curentTodo:{todoText:event.target.value,id}});
+    const {id} = this.state.currentTodo;
+    this.setState({ currentTodo:{todoText:event.target.value,id}});
   };
 
   handleSubmit = (event) => {
     const {toggleEdit} = this.props;
     event.preventDefault();
-    const { curentTodo } = this.state;
-    this.props.updateTodo({ ...curentTodo });
+    const { currentTodo } = this.state;
+    this.props.updateTodo({ ...currentTodo });
     toggleEdit();
   };
 
   render() {
-    const {todoText} = this.state.curentTodo;
+    const {todoText} = this.state.currentTodo;
     return (
       <div className="EditTodoForm">
         <form onSubmit={this.handleSubmit}>
