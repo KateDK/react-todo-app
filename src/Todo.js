@@ -22,12 +22,14 @@ class Todo extends React.Component {
     return (
       <div className="Todo">
         {editMode ? (
-          <EditTodoForm
-            todo={todo}
-            label="Edit Todo "
-            updateTodo={updateTodo}
-            toggleEdit={this.handleClcick}
-          />
+          <span>
+            <EditTodoForm
+              todo={todo}
+              label="Edit Todo "
+              updateTodo={updateTodo}
+              toggleEdit={this.handleClcick}
+            />
+          </span>
         ) : (
           <span>
             <button className="todoDelete" onClick={() => deleteTodo(todo.id)}>
