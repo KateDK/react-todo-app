@@ -1,7 +1,7 @@
 .Todo {
   display: flex;
   margin: 0 -3rem 4px;
-  padding: 1.1rem 2rem;
+  padding: 0.5rem 1.1rem;
   min-height: 77px;
   justify-content: space-between;
   align-items: center;
