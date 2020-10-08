@@ -1,13 +1,12 @@
 .TodoList {
   color: #fff;
-  border-radius: 15px;
   min-height: 250px;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 2rem 3rem 3rem;
+  padding: 0 3rem 3rem;
   margin: auto;
 }
 
