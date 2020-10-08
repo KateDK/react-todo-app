@@ -27,6 +27,11 @@ class TodoList extends React.Component {
 
   };
 
+  clearAll = () =>{
+    this.setState({todos:[]});
+    localStorage.setItem('todos',[]);
+  }
+
   updateTodo = (todo) => {
     const { id } = todo;
     const { todos } = this.state;
@@ -77,7 +82,7 @@ class TodoList extends React.Component {
         ))}
         </ul>
         <div className="clearAllContainer">
-          <button className="clearAll">Clear all</button>
+          <button className="clearAll" onClick={this.clearAll}>Clear all</button>
         </div>
         <NewTodoForm addTodo={this.addTodo} />
       </div>
