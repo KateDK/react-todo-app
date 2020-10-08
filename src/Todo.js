@@ -35,8 +35,8 @@ class Todo extends React.Component {
             <button className="todoDelete" aria-label="Delete Todo" onClick={() => deleteTodo(todo.id)}>
             <i class="far fa-trash-alt"></i>
             </button>
-            <button className="todoEdit" onClick={this.handleClcick}>
-              Edit
+            <button className="todoEdit" aria-label="Edit Todo" onClick={this.handleClcick}>
+            <i class="fas fa-pencil-alt"></i>
             </button>
             <h2 className={todoTextClass} onClick={this.hendleToggle}>
               {todo.todoText}
