@@ -9,8 +9,8 @@ class TodoList extends React.Component {
   };
 
   componentDidMount(){
-    const data = JSON.parse(localStorage.getItem('todos'));
-    this.setState({todos: data ? data : []});
+    const data = localStorage.getItem('todos');
+    this.setState({todos: data ? JSON.parse(data) : []});
   }
 
   addTodo = (newTodo) => {
