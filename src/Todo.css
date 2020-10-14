@@ -17,6 +17,7 @@
 }
 
 .Todo-task {
+  word-break: break-all;
   position: relative;
   transition: opacity 0.4s linear;
   margin-left: 25px;
