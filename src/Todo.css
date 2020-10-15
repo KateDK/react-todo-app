@@ -13,17 +13,23 @@
 
 .Todo span {
   display: flex;
-  padding: 10px;
 }
 
 .Todo-task {
   word-break: break-all;
   position: relative;
   transition: opacity 0.4s linear;
-  margin-left: 25px;
+  margin-left: 10px;
   text-align: left;
   font-size: large;
   align-self: center;
+}
+
+.todoButtonDivider {
+  width: 0.5px;
+  border-right: 2px solid #fff;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .completed {
@@ -36,7 +42,6 @@
 .todoDelete,
 .todoEdit {
   flex-shrink: 0;
-  padding-left: 0.7em;
   margin-left: auto;
 
   border: none;
