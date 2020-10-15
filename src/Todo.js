@@ -32,15 +32,21 @@ class Todo extends React.Component {
           </span>
         ) : (
           <span>
-
-              <button className="todoDelete" aria-label="Delete Todo" onClick={() => deleteTodo(todo.id)}>
+            <button
+              className="todoDelete"
+              aria-label="Delete Todo"
+              onClick={() => deleteTodo(todo.id)}
+            >
               <i class="far fa-trash-alt"></i>
-              </button>
-              <button className="todoEdit" aria-label="Edit Todo" onClick={this.handleClick}>
+            </button>
+            <button
+              className="todoEdit"
+              aria-label="Edit Todo"
+              onClick={this.handleClick}
+            >
               <i class="fas fa-pencil-alt"></i>
-              </button>
-
-            <div className="todoButtonDivider"/>
+            </button>
+            <div className="todoButtonDivider" />
             <h2 className={todoTextClass} onClick={this.handleToggle}>
               {todo.todoText}
             </h2>
