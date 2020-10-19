@@ -40,7 +40,8 @@
 }
 
 .todoDelete,
-.todoEdit {
+.todoEdit,
+.todoToggle {
   flex-shrink: 0;
   margin-left: auto;
 
