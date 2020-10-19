@@ -47,7 +47,7 @@ class Todo extends React.Component {
             >
               <i class="fas fa-pencil-alt"></i>
             </button>
-            <button className="todoToggle" aria-label="Toggle Todo">
+            <button className="todoToggle" aria-label="Toggle Todo" onClick={this.handleToggle}>
             {todoToggle}
             </button>
             <div className="todoButtonDivider" />
