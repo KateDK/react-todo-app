@@ -36,11 +36,16 @@
   transition: opacity 300ms ease-in-out;
   transition-delay: 200ms;
   text-decoration: line-through;
-  opacity: 0.5;
+  opacity: 0.8;
+}
+
+.completedTodo {
+  background-color: rgba(43, 43, 43, 0.2);
 }
 
 .todoDelete,
-.todoEdit {
+.todoEdit,
+.todoToggle {
   flex-shrink: 0;
   margin-left: auto;
 
