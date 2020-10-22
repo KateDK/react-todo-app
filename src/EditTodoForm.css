@@ -1,21 +1,25 @@
 .EditTodoForm {
-  display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  max-width: 600px;
+}
 .EditTodoForm form {
   display: flex;
 }
+
 .EditTodoForm label {
   min-width: 100%;
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
 .EditTodoForm input {
-  flex-grow: 1;
   border: none;
   background: #f7f1f1;
   padding: 0 1.5em;
   font-size: initial;
   padding-bottom: 2px;
+  width: 460px;
 }
 .EditTodoForm button {
   padding: 0 1.3rem;
