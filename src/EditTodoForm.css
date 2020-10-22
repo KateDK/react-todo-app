@@ -2,18 +2,18 @@
   display: flex;
   flex-wrap: wrap;
 }
-.EditTodoForm label {
-  min-width: 100%;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
+
 .EditTodoForm input {
-  flex-grow: 1;
-  border: none;
-  background: #f7f1f1;
-  padding: 0 1.5em;
+  position: absolute;
+  border: 0;
+  background: rgba(0, 0, 0, 0.194);
+  max-width: 72%;
+  min-width: 60%;
+  padding: 8px 0 5px 0;
   font-size: initial;
-  padding-bottom: 2px;
+  color: #fff;
+  font-style: italic;
+  margin-left: 1.5em;
 }
 .EditTodoForm button {
   padding: 0 1.3rem;
@@ -24,6 +24,7 @@
   font-weight: bold;
   border: 1px solid rgba(255, 255, 255, 0.3);
   margin-left: 5px;
+  margin-right: 1.5em;
   cursor: pointer;
   transition: background 0.4s ease-out;
   outline: none;
@@ -35,4 +36,9 @@
 .EditTodoForm button {
   font-family: 'Quicksand', sans-serif;
   height: 3rem;
+}
+
+.EditTodoForm form {
+  margin: 0 auto;
+  /* width: 100%; */
 }
