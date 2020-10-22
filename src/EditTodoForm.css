@@ -1,6 +1,8 @@
 .EditTodoForm {
   display: flex;
   flex-wrap: wrap;
+.EditTodoForm form {
+  display: flex;
 }
 .EditTodoForm label {
   min-width: 100%;
