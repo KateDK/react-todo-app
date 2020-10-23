@@ -34,7 +34,7 @@ class Todo extends React.Component {
     const classNames = this.makeClassNames();
     const todoClass = classNames.todoClass;
     const todoTextClass = classNames.todoTextClass;
-    const todoToggle = todo.completed ? <i class="fas fa-check-square"></i> : <i class="far fa-check-square"></i>
+    const todoToggle = todo.completed ? <i className="fas fa-check-square"></i> : <i className="far fa-check-square"></i>
     const { editMode } = this.state;
     return (
       <div className={todoClass}>
@@ -54,14 +54,14 @@ class Todo extends React.Component {
               aria-label="Delete Todo"
               onClick={() => deleteTodo(todo.id)}
             >
-              <i class="far fa-trash-alt"></i>
+              <i className="far fa-trash-alt"></i>
             </button>
             <button
               className="todoEdit"
               aria-label="Edit Todo"
               onClick={this.handleClick}
             >
-              <i class="fas fa-pencil-alt"></i>
+              <i className="fas fa-pencil-alt"></i>
             </button>
             <button className="todoToggle" aria-label="Toggle Todo" onClick={this.handleToggle}>
             {todoToggle}
