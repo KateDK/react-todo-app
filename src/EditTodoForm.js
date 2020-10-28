@@ -24,7 +24,7 @@ class EditTodoForm extends React.Component {
     return (
       <div className="EditTodoForm">
         <form onSubmit={this.handleSubmit}>
-          <button type="submit">Save</button>
+          <button type="submit" disabled={todoText===''}>Save</button>
           <label hidden>Edit Todo </label>
           <input
             name="todo"

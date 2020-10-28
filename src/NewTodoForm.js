@@ -18,10 +18,11 @@ class NewTodoForm extends React.Component {
   };
 
   render() {
+    const disabled = this.state.todoText==='';
     return (
       <div className="NewTodoForm">
         <form onSubmit={this.handleSubmit}>
-          <button type="submit">Add</button>
+          <button type="submit" disabled={disabled}>Add</button>
           <label hidden>New Todo: </label>
           <input
             name="todo"
