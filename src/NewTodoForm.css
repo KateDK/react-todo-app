@@ -32,6 +32,10 @@
 .NewTodoForm button:hover {
   background: rgba(0, 0, 0, 0.1);
 }
+.NewTodoForm button:disabled {
+  background: rgba(109, 108, 108, 0.61);
+  cursor: default;
+}
 .NewTodoForm input,
 .NewTodoForm button {
   font-family: 'Quicksand', sans-serif;
