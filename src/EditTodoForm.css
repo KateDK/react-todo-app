@@ -37,6 +37,10 @@
 .EditTodoForm button:hover {
   background: rgba(0, 0, 0, 0.1);
 }
+.EditTodoForm button:disabled {
+  background: rgba(109, 108, 108, 0.61);
+  cursor: default;
+}
 .EditTodoForm input,
 .EditTodoForm button {
   font-family: 'Quicksand', sans-serif;
