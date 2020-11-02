@@ -13,7 +13,7 @@ class NewTodoForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { todoText } = this.state;
-    this.props.addTodo({ todoText, id: uuidv4(), completed: false });
+    this.props.addTodo({ todoText, id: uuidv4(), completed: false ,important:false});
     this.setState({ todoText: '' });
   };
 
