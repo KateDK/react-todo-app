@@ -63,6 +63,15 @@ class Todo extends React.Component {
             >
               <i className="fas fa-pencil-alt"></i>
             </button>
+
+
+            <button
+              className="todoImportant"
+              aria-label="Important Todo"
+            >
+              <i className="far fa-star"></i>
+            </button>
+
             <button className="todoToggle" aria-label="Toggle Todo" onClick={this.handleToggle}>
             {todoToggle}
             </button>
