@@ -15,10 +15,16 @@ class Todo extends React.Component {
     toggleCompleteTodo(todo);
   };
 
+  handleToggleTodoImportant = ()=>{
+    const {toggleTodoImportant,todo} = this.props;
+    toggleTodoImportant(todo);
+  }
+
   makeClassNames = () => {
     const { todo } = this.props;
     let todoClass;
     let todoTextClass;
+    let importantStatus;
     if(todo.completed){
       todoClass="Todo completedTodo";
       todoTextClass='Todo-task completed'
@@ -26,7 +32,12 @@ class Todo extends React.Component {
       todoClass="Todo";
       todoTextClass='Todo-task'
     }
-    return {todoClass,todoTextClass}
+    if(todo.important){
+      importantStatus="fas fa-star"
+    }else{
+      importantStatus="far fa-star";
+    }
+    return {todoClass,todoTextClass,importantStatus}
   }
 
   render() {
@@ -34,6 +45,7 @@ class Todo extends React.Component {
     const classNames = this.makeClassNames();
     const todoClass = classNames.todoClass;
     const todoTextClass = classNames.todoTextClass;
+    const{importantStatus}=classNames;
     const todoToggle = todo.completed ? <i className="fas fa-check-square"></i> : <i className="far fa-check-square"></i>
     const { editMode } = this.state;
     return (
@@ -63,6 +75,16 @@ class Todo extends React.Component {
             >
               <i className="fas fa-pencil-alt"></i>
             </button>
+
+
+            <button
+              className="todoImportant"
+              aria-label="Important Todo"
+              onClick={this.handleToggleTodoImportant}
+            >
+              <i className={importantStatus}></i>
+            </button>
+
             <button className="todoToggle" aria-label="Toggle Todo" onClick={this.handleToggle}>
             {todoToggle}
             </button>

@@ -45,6 +45,7 @@
 
 .todoDelete,
 .todoEdit,
+.todoImportant,
 .todoToggle {
   flex-shrink: 0;
   margin-left: auto;
@@ -56,4 +57,10 @@
   -webkit-appearance: none;
   cursor: pointer;
   color: #fff;
+}
+
+.fas.fa-star {
+  color: gold;
+  /* box-shadow: 120px 80px 40px 20px #0ff; */
+  text-shadow: 1px 1px 10px forestgreen;
 }

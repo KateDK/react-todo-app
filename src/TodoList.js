@@ -63,6 +63,20 @@ class TodoList extends React.Component {
 
   };
 
+  toggleTodoImportant = todo => {
+    const {id,important} = todo;
+    const { todos } = this.state;
+
+    let index;
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].id === id) index = i;
+    }
+    todos[index] = { ...todo, important: !important };
+    this.setState({ todos });
+    localStorage.setItem('todos',JSON.stringify(todos));
+
+  }
+
   render() {
     const { todos } = this.state;
     return (
@@ -78,6 +92,7 @@ class TodoList extends React.Component {
               id={item.id}
               deleteTodo={this.deleteTodo}
               toggleCompleteTodo={this.toggleCompleteTodo}
+              toggleTodoImportant={this.toggleTodoImportant}
             />
           </li>
         ))}
