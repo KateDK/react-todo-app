@@ -45,6 +45,7 @@
 
 .todoDelete,
 .todoEdit,
+.todoImportant,
 .todoToggle {
   flex-shrink: 0;
   margin-left: auto;
