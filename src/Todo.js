@@ -15,6 +15,10 @@ class Todo extends React.Component {
     toggleCompleteTodo(todo);
   };
 
+  handleToggleTodoImportant = ()=>{
+    const {toggleTodoImportant,todo} = this.props;
+    toggleTodoImportant(todo);
+  }
   makeClassNames = () => {
     const { todo } = this.props;
     let todoClass;
@@ -68,6 +72,7 @@ class Todo extends React.Component {
             <button
               className="todoImportant"
               aria-label="Important Todo"
+              onClick={this.handleToggleTodoImportant}
             >
               <i className="far fa-star"></i>
             </button>
