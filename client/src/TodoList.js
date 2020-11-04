@@ -10,9 +10,19 @@ class TodoList extends React.Component {
   };
 
 
-  componentDidMount() {
-    const data = localStorage.getItem('todos');
-    this.setState({ todos: data ? JSON.parse(data) : [] });
+  async componentDidMount() {
+    try {
+      const res = await axios.get('/todos');
+      console.log('data', res.data);
+      this.setState(res.data);
+    } catch (error) {
+      console.log('Oh no.. I will do the thing I know now');
+      console.error(error.message);
+      const data = localStorage.getItem('todos');
+      this.setState({ todos: data ? JSON.parse(data) : [] });
+    }
+
+    // this.setState({todos: data ? JSON.parse(data) : []});
   }
 
   addTodo = (newTodo) => {
