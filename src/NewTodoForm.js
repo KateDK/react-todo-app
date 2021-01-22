@@ -1,40 +1,29 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import './NewTodoForm.css';
-class NewTodoForm extends React.Component {
-  state = {
-    todoText: '',
-  };
+import { HOCTodoForm } from './HOCTodoForm';
 
-  handleChange = (event) => {
-    this.setState({ todoText: event.target.value });
-  };
+const NewTodoForm = (props) => {
+  return (
+    <div className="NewTodoForm">
+      <form onSubmit={props.handleSubmit}>
+        <button type="submit" disabled={props.disabled}>
+          {props.buttonText}
+        </button>
+        <label hidden>{props.labelText}</label>
+        <input
+          name="todo"
+          value={props.todo.todoText}
+          type="text"
+          onChange={props.handleChange}
+          placeholder={props.placeholder}
+        />
+      </form>
+    </div>
+  );
+};
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { todoText } = this.state;
-    this.props.addTodo({ todoText, id: uuidv4(), completed: false ,important:false});
-    this.setState({ todoText: '' });
-  };
-
-  render() {
-    const disabled = this.state.todoText==='';
-    return (
-      <div className="NewTodoForm">
-        <form onSubmit={this.handleSubmit}>
-          <button type="submit" disabled={disabled}>Add</button>
-          <label hidden>New Todo: </label>
-          <input
-            name="todo"
-            value={this.state.todoText}
-            type="text"
-            onChange={this.handleChange}
-            placeholder="New Todo"
-          />
-        </form>
-      </div>
-    );
-  }
-}
-
-export default NewTodoForm;
+export default HOCTodoForm(NewTodoForm, {
+  buttonText: 'Add',
+  labelText: 'New Todo: ',
+  placeholder: 'New Todo',
+});
