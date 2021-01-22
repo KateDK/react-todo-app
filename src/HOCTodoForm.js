@@ -13,8 +13,9 @@ class TodoForm extends React.Component {
   };
 
   handleChange = (event) => {
+    const { todo } = this.state;
     this.setState({
-      todo: { ...this.state.todo, todoText: event.target.value },
+      todo: { ...todo, todoText: event.target.value },
     });
   };
 
