@@ -1,10 +1,9 @@
 import React from 'react';
-import './NewTodoForm.css';
 import { HOCTodoForm } from './HOCTodoForm';
 
 const NewTodoForm = (props) => {
   return (
-    <div className="NewTodoForm">
+    <div className="TodoForm new">
       <form onSubmit={props.handleSubmit}>
         <button type="submit" disabled={props.disabled}>
           {props.buttonText}
