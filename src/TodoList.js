@@ -73,35 +73,38 @@ class TodoList extends React.Component {
     }
     todos[index] = { ...todo, important: !important };
     this.setState({ todos });
-    localStorage.setItem('todos',JSON.stringify(todos));
-
-  }
+    localStorage.setItem('todos', JSON.stringify(todos));
+  };
 
   render() {
     const { todos } = this.state;
     return (
       <div className="TodoList">
-        <h1>Todo List <span>Get stuff done</span></h1>
+        <h1>
+          Todo List <span>Get stuff done</span>
+        </h1>
         <NewTodoForm addTodo={this.addTodo} />
         <ul>
-        {todos.map((item) => (
-          <li key={item.id}>
-            <Todo
-              updateTodo={this.updateTodo}
-              todo={item}
-              id={item.id}
-              deleteTodo={this.deleteTodo}
-              toggleCompleteTodo={this.toggleCompleteTodo}
-              toggleTodoImportant={this.toggleTodoImportant}
-            />
-          </li>
-        ))}
+          {todos.map((item) => (
+            <li key={item.id}>
+              <Todo
+                updateTodo={this.updateTodo}
+                todo={item}
+                id={item.id}
+                deleteTodo={this.deleteTodo}
+                toggleCompleteTodo={this.toggleCompleteTodo}
+                toggleTodoImportant={this.toggleTodoImportant}
+              />
+            </li>
+          ))}
         </ul>
-        {todos.length > 1 &&
-        <div className="clearAllContainer">
-          <button className="clearAll" onClick={this.clearAll}>Clear all</button>
-        </div>
-        }
+        {todos.length > 1 && (
+          <div className="clearAllContainer">
+            <button className="clearAll" onClick={this.clearAll}>
+              Clear all
+            </button>
+          </div>
+        )}
       </div>
     );
   }
