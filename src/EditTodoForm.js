@@ -1,42 +1,29 @@
 import React from 'react';
-import './EditTodoForm.css'
+import './EditTodoForm.css';
+import { HOCTodoForm } from './HOCTodoForm';
 
-class EditTodoForm extends React.Component {
-  state = {
-    currentTodo: {...this.props.todo},
-  };
+const EditTodoForm = (props) => {
+  return (
+    <div className="EditTodoForm">
+      <form onSubmit={props.handleSubmit}>
+        <button type="submit" disabled={props.disabled}>
+          {props.buttonText}
+        </button>
+        <label hidden>{props.labelText}</label>
+        <input
+          name="todo"
+          value={props.todo.todoText}
+          type="text"
+          onChange={props.handleChange}
+          placeholder={props.placeholder}
+        />
+      </form>
+    </div>
+  );
+};
 
-  handleChange = (event) => {
-    const {id} = this.state.currentTodo;
-    this.setState({ currentTodo:{todoText:event.target.value,id}});
-  };
-
-  handleSubmit = (event) => {
-    const {toggleEdit} = this.props;
-    event.preventDefault();
-    const { currentTodo } = this.state;
-    this.props.updateTodo({ ...currentTodo });
-    toggleEdit();
-  };
-
-  render() {
-    const {todoText} = this.state.currentTodo;
-    return (
-      <div className="EditTodoForm">
-        <form onSubmit={this.handleSubmit}>
-          <button type="submit" disabled={todoText===''}>Save</button>
-          <label hidden>Edit Todo </label>
-          <input
-            name="todo"
-            value={todoText}
-            type="text"
-            onChange={this.handleChange}
-            placeholder="Edit Todo "
-          />
-        </form>
-      </div>
-    );
-  }
-}
-
-export default EditTodoForm;
+export default HOCTodoForm(EditTodoForm, {
+  buttonText: 'Save',
+  labelText: 'Edit Todo: ',
+  placeholder: 'Edit Todo',
+});
