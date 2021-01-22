@@ -8,45 +8,43 @@ class TodoList extends React.Component {
     todos: [],
   };
 
-  componentDidMount(){
+  componentDidMount() {
     const data = localStorage.getItem('todos');
-    this.setState({todos: data ? JSON.parse(data) : []});
+    this.setState({ todos: data ? JSON.parse(data) : [] });
   }
 
   addTodo = (newTodo) => {
     const newTodos = [...this.state.todos, newTodo];
     this.setState({ todos: newTodos });
-    localStorage.setItem('todos',JSON.stringify(newTodos));
+    localStorage.setItem('todos', JSON.stringify(newTodos));
   };
 
   deleteTodo = (todoId) => {
     const { todos } = this.state;
     const filteredTodos = todos.filter((elm) => elm.id !== todoId);
     this.setState({ todos: filteredTodos });
-    localStorage.setItem('todos',JSON.stringify(filteredTodos));
-
+    localStorage.setItem('todos', JSON.stringify(filteredTodos));
   };
 
-  clearAll = () =>{
-    this.setState({todos:[]});
-    localStorage.setItem('todos',[]);
-  }
+  clearAll = () => {
+    this.setState({ todos: [] });
+    localStorage.setItem('todos', []);
+  };
 
   updateTodo = (todo) => {
     const { id } = todo;
     const { todos } = this.state;
 
-    const updatedTodos = todos.map(todoItem=>{
-      if(todoItem.id === id){
-        return {...todo}
-      }else{
-        return todoItem
+    const updatedTodos = todos.map((todoItem) => {
+      if (todoItem.id === id) {
+        return { ...todo };
+      } else {
+        return todoItem;
       }
-    })
+    });
 
     this.setState({ todos: updatedTodos });
-    localStorage.setItem('todos',JSON.stringify(updatedTodos));
-
+    localStorage.setItem('todos', JSON.stringify(updatedTodos));
   };
 
   toggleCompleteTodo = (todo) => {
@@ -59,12 +57,11 @@ class TodoList extends React.Component {
     }
     todos[index] = { ...todo, completed: !completed };
     this.setState({ todos });
-    localStorage.setItem('todos',JSON.stringify(todos));
-
+    localStorage.setItem('todos', JSON.stringify(todos));
   };
 
-  toggleTodoImportant = todo => {
-    const {id,important} = todo;
+  toggleTodoImportant = (todo) => {
+    const { id, important } = todo;
     const { todos } = this.state;
 
     let index;
