@@ -40,11 +40,11 @@ class TodoForm extends React.Component {
     const { component: C, defaultOnValue, ...props } = this.props;
     return (
       <C
+        {...props}
         disabled={disabled}
         todo={this.state.todo}
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
-        {...props}
       />
     );
   }
