@@ -1,28 +1,31 @@
 import React from 'react';
-import { HOCTodoForm } from './HOCTodoForm';
+import TodoForm from './HOCTodoForm';
 
-const NewTodoForm = (props) => {
+const NewTodoForm = () => {
   return (
-    <div className="TodoForm new">
-      <form onSubmit={props.handleSubmit}>
-        <button type="submit" disabled={props.disabled}>
-          {props.buttonText}
-        </button>
-        <label hidden>{props.labelText}</label>
-        <input
-          name="todo"
-          value={props.todo.todoText}
-          type="text"
-          onChange={props.handleChange}
-          placeholder={props.placeholder}
-        />
-      </form>
-    </div>
+    <TodoForm
+      render={({ todo, handleSubmit, handleChange }) => {
+        const disabled = todo.todoText === '';
+        return (
+          <div className="TodoForm new">
+            <form onSubmit={handleSubmit}>
+              <button type="submit" disabled={disabled}>
+                {'Add'}
+              </button>
+              <label hidden>{'New Todo: '}</label>
+              <input
+                name="todo"
+                value={todo.todoText}
+                type="text"
+                onChange={handleChange}
+                placeholder={'New Todo'}
+              />
+            </form>
+          </div>
+        );
+      }}
+    />
   );
 };
 
-export default HOCTodoForm(NewTodoForm, {
-  buttonText: 'Add',
-  labelText: 'New Todo: ',
-  placeholder: 'New Todo',
-});
+export default NewTodoForm;
