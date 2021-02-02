@@ -1,29 +1,39 @@
 import React from 'react';
 import './EditTodoForm.css';
-import { HOCTodoForm } from './HOCTodoForm';
+import TodoForm from './TodoForm';
 
 const EditTodoForm = (props) => {
   return (
-    <div className="EditTodoForm">
-      <form onSubmit={props.handleSubmit}>
-        <button type="submit" disabled={props.disabled}>
-          {props.buttonText}
-        </button>
-        <label hidden>{props.labelText}</label>
-        <input
-          name="todo"
-          value={props.todo.todoText}
-          type="text"
-          onChange={props.handleChange}
-          placeholder={props.placeholder}
-        />
-      </form>
-    </div>
+    <TodoForm
+      updateTodo={props.updateTodo}
+      todo={props.todo}
+      toggleEdit={props.toggleEdit}
+      render={({ todo, handleSubmit, handleChange }) => {
+        const disabled = todo.todoText === '';
+        return (
+          <div className="EditTodoForm">
+            <form onSubmit={handleSubmit}>
+              <button type="submit" disabled={disabled}>
+                Save
+              </button>
+              <label hidden>Edit Todo: </label>
+              <input
+                name="todo"
+                value={todo.todoText}
+                type="text"
+                onChange={handleChange}
+                placeholder="Edit Todo"
+              />
+            </form>
+          </div>
+        );
+      }}
+    />
   );
 };
-
-export default HOCTodoForm(EditTodoForm, {
-  buttonText: 'Save',
-  labelText: 'Edit Todo: ',
-  placeholder: 'Edit Todo',
-});
+export default EditTodoForm;
+// export default HOCTodoForm(EditTodoForm, {
+//   buttonText: 'Save',
+//   labelText: 'Edit Todo: ',
+//   placeholder: 'Edit Todo',
+// });

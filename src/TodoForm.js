@@ -1,12 +1,12 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import './HOCTodoForm.css';
+import './TodoForm.css';
 
 const makeNewBlankToDo = () => {
   return { todoText: '', completed: false, important: false, id: uuidv4() };
 };
 
-class TodoForm extends React.Component {
+export default class TodoForm extends React.Component {
   state = {
     todo: this.props.todo || makeNewBlankToDo(),
     newTodo: this.props.todo ? false : true,
@@ -36,30 +36,15 @@ class TodoForm extends React.Component {
   };
 
   render() {
-    const disabled = this.state.todo.todoText === '';
-    const { component: C, defaultOnValue, ...props } = this.props;
+    const { todo } = this.state;
     return (
-      <C
-        {...props}
-        disabled={disabled}
-        todo={this.state.todo}
-        handleSubmit={this.handleSubmit}
-        handleChange={this.handleChange}
-      />
+      <div>
+        {this.props.render({
+          todo,
+          handleChange: this.handleChange,
+          handleSubmit: this.handleSubmit,
+        })}
+      </div>
     );
   }
-}
-
-export function HOCTodoForm(component, optionsObj) {
-  return function (props) {
-    return (
-      <TodoForm
-        {...props}
-        component={component}
-        buttonText={optionsObj.buttonText}
-        labelText={optionsObj.labelText}
-        placeholder={optionsObj.placeholder}
-      />
-    );
-  };
 }
