@@ -1,6 +1,6 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import './HOCTodoForm.css';
+import './TodoForm.css';
 
 const makeNewBlankToDo = () => {
   return { todoText: '', completed: false, important: false, id: uuidv4() };
@@ -21,7 +21,6 @@ export default class TodoForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('IM triggered from here');
     const { todo, newTodo } = this.state;
     if (newTodo) {
       this.props.addTodo(todo);
@@ -38,7 +37,6 @@ export default class TodoForm extends React.Component {
 
   render() {
     const { todo } = this.state;
-
     return (
       <div>
         {this.props.render({

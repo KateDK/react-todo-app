@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoForm from './HOCTodoForm';
+import TodoForm from './TodoForm';
 
 const NewTodoForm = (props) => {
   return (

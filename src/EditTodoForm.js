@@ -1,6 +1,6 @@
 import React from 'react';
 import './EditTodoForm.css';
-import TodoForm from './HOCTodoForm';
+import TodoForm from './TodoForm';
 
 const EditTodoForm = (props) => {
   return (
