@@ -11,15 +11,15 @@ const NewTodoForm = (props) => {
           <div className="TodoForm new">
             <form onSubmit={handleSubmit}>
               <button type="submit" disabled={disabled}>
-                {'Add'}
+                Add
               </button>
-              <label hidden>{'New Todo: '}</label>
+              <label hidden>New Todo: </label>
               <input
                 name="todo"
                 value={todo.todoText}
                 type="text"
                 onChange={handleChange}
-                placeholder={'New Todo'}
+                placeholder="New Todo"
               />
             </form>
           </div>
