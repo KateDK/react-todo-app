@@ -1,9 +1,10 @@
 import React from 'react';
 import TodoForm from './HOCTodoForm';
 
-const NewTodoForm = () => {
+const NewTodoForm = (props) => {
   return (
     <TodoForm
+      addTodo={props.addTodo}
       render={({ todo, handleSubmit, handleChange }) => {
         const disabled = todo.todoText === '';
         return (
