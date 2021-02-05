@@ -8,7 +8,8 @@ const EditTodoForm = (props) => {
       updateTodo={props.updateTodo}
       todo={props.todo}
       toggleEdit={props.toggleEdit}
-      render={({ todo, handleSubmit, handleChange }) => {
+    >
+      {({ todo, handleSubmit, handleChange }) => {
         const disabled = todo.todoText === '';
         return (
           <div className="EditTodoForm">
@@ -28,7 +29,7 @@ const EditTodoForm = (props) => {
           </div>
         );
       }}
-    />
+    </TodoForm>
   );
 };
 export default EditTodoForm;

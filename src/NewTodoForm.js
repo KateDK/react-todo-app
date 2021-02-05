@@ -3,9 +3,8 @@ import TodoForm from './TodoForm';
 
 const NewTodoForm = (props) => {
   return (
-    <TodoForm
-      addTodo={props.addTodo}
-      render={({ todo, handleSubmit, handleChange }) => {
+    <TodoForm addTodo={props.addTodo}>
+      {({ todo, handleSubmit, handleChange }) => {
         const disabled = todo.todoText === '';
         return (
           <div className="TodoForm new">
@@ -25,7 +24,7 @@ const NewTodoForm = (props) => {
           </div>
         );
       }}
-    />
+    </TodoForm>
   );
 };
 

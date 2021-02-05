@@ -37,14 +37,10 @@ export default class TodoForm extends React.Component {
 
   render() {
     const { todo } = this.state;
-    return (
-      <div>
-        {this.props.render({
-          todo,
-          handleChange: this.handleChange,
-          handleSubmit: this.handleSubmit,
-        })}
-      </div>
-    );
+    return this.props.children({
+      todo,
+      handleChange: this.handleChange,
+      handleSubmit: this.handleSubmit,
+    });
   }
 }
